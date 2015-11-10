@@ -1,0 +1,27 @@
+<h1>Listing preferencials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preferencials.each do |preferencial| %>
+      <tr>
+        <td><%= preferencial.nombre %></td>
+        <td><%= preferencial.cliente %></td>
+        <td><%= link_to 'Show', preferencial %></td>
+        <td><%= link_to 'Edit', edit_preferencial_path(preferencial) %></td>
+        <td><%= link_to 'Destroy', preferencial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preferencial', new_preferencial_path %>
