@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 20151103233238) do
   end
 
   create_table "pedidos", force: true do |t|
-    t.integer  "producto_id"
-    t.integer  "cliente_id"
+    t.integer  "productos_id"
+    t.integer  "clientes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pedidos", ["cliente_id"], name: "index_pedidos_on_cliente_id"
-  add_index "pedidos", ["producto_id"], name: "index_pedidos_on_producto_id"
+  add_index "pedidos", ["clientes_id"], name: "index_pedidos_on_clientes_id"
+  add_index "pedidos", ["productos_id"], name: "index_pedidos_on_productos_id"
 
   create_table "preferencials", force: true do |t|
     t.string   "nombre"
